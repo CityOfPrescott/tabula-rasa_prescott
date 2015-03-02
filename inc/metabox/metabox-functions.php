@@ -257,6 +257,55 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 	/**
 	 * Metabox to be displayed on a single page ID
 	 */
+	$meta_boxes['spotlight_metabox'] = array(
+		'id'         => 'spotlight_metabox',
+		'title'      => __( 'Spotlights', 'tabula-rasa' ),
+		'pages'      => array( 'page', ), // Post type
+		'context'    => 'normal',
+		'priority'   => 'high',
+		'show_names' => true, // Show field names on the left
+		'fields'     => array(
+			array(
+				'name' => __( 'Spotlight 1', 'tabula-rasa' ),
+				'desc' => __( '', 'tabula-rasa' ),
+				'id'   => $prefix . 'text',
+				'type' => 'text',
+			),
+			array(
+				'name' => __( 'Website URL', 'tabula-rasa' ),
+				'desc' => __( '', 'tabula-rasa' ),
+				'id'   => $prefix . 'url',
+				'type' => 'text_url',
+				// 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+				'repeatable' => true,
+			),			
+		)
+	);
+	
+	
+	/**
+	 * Metabox to be displayed on a single page ID
+	 */
+	$meta_boxes['contact_metabox'] = array(
+		'id'         => 'contact_metabox',
+		'title'      => __( 'Contact Info', 'tabula-rasa' ),
+		'pages'      => array( 'page', ), // Post type
+		'context'    => 'normal',
+		'priority'   => 'high',
+		'show_names' => true, // Show field names on the left
+		'fields'     => array(
+			array(
+				'name' => __( 'Contact Info', 'tabula-rasa' ),
+				'desc' => __( '', 'tabula-rasa' ),
+				'id'   => $prefix . 'contact',
+				'type' => 'text',
+			),		
+		)
+	);	
+	
+	/**
+	 * Metabox to be displayed on a single page ID
+	 */
 	$meta_boxes['about_page_metabox'] = array(
 		'id'         => 'about_page_metabox',
 		'title'      => __( 'About Page Metabox', 'tabula-rasa' ),
@@ -264,11 +313,10 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 		'context'    => 'normal',
 		'priority'   => 'high',
 		'show_names' => true, // Show field names on the left
-		'show_on'    => array( 'key' => 'id', 'value' => array( 2, ), ), // Specific post IDs to display this metabox
 		'fields'     => array(
 			array(
-				'name' => __( 'Test Text', 'tabula-rasa' ),
-				'desc' => __( 'field description (optional)', 'tabula-rasa' ),
+				'name' => __( 'Spotlight 1', 'tabula-rasa' ),
+				'desc' => __( '', 'tabula-rasa' ),
 				'id'   => $prefix . '_about_test_text',
 				'type' => 'text',
 			),

@@ -6,23 +6,56 @@
  */
 ?>
 	<div id="secondary" class="widget-area" role="complementary">
-		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
+		<aside class="widget">
+			<h3 class="widget-title">Contact Info</h3>
+			<ul>
+				<li>Some kind of contact info</li>
+			</ul>
+		</aside>
 
-			<aside id="archives" class="widget">
-				<h1 class="widget-title"><?php _e( 'Archives', 'tabula-rasa' ); ?></h1>
-				<ul>
-					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-				</ul>
-			</aside>
+		<aside class="widget">
+			<h3 class="widget-title">New Annoucements</h3>
+			<ul>
+				<li>City Government has collapsed</li>
+				<li>Widespread looting</li>
+				<li>City Government has collapsed</li>
+			</ul>
+		</aside>	
 
-			<aside id="meta" class="widget">
-				<h1 class="widget-title"><?php _e( 'Meta', 'tabula-rasa' ); ?></h1>
-				<ul>
-					<?php wp_register(); ?>
-					<li><?php wp_loginout(); ?></li>
-					<?php wp_meta(); ?>
-				</ul>
-			</aside>
+		<aside class="widget">
+			<h3 class="widget-title">Upcoming Events</h3>
+			<ul>
+				<li>City Government has collapsed</li>
+				<li>Widespread looting</li>
+				<li>City Government has collapsed</li>
+			</ul>
+		</aside>
 
-		<?php endif; // end sidebar widget area ?>
+		<aside class="widget">
+			<h3 class="widget-title">FAQ</h3>
+			<ul>
+				<li>City Government has collapsed</li>
+				<li>Widespread looting</li>
+				<li>City Government has collapsed</li>
+			</ul>
+		</aside>	
+
+		<aside class="widget">
+			<h3 class="widget-title">Forms</h3>
+			<ul>
+				<li>City Government has collapsed</li>
+				<li>Widespread looting</li>
+				<li>City Government has collapsed</li>
+			</ul>
+		</aside>	
+
+		<aside class="widget">
+			<h3 class="widget-title">Code</h3>
+			<ul>
+				<li>City Government has collapsed</li>
+				<li>Widespread looting</li>
+				<li>City Government has collapsed</li>
+			</ul>
+		</aside>			
+
 	</div><!-- #secondary -->

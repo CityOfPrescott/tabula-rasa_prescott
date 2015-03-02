@@ -1,0 +1,38 @@
+.top-menu {
+	border-bottom: 1px solid @black;
+	background: @grey;
+	
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		text-align: right;
+				
+		li {
+			display: inline;
+			
+			a {}
+		}
+	}
+} /* end .top-menu */
+
+/** Breakpoint - 600 **/
+@media only screen and (min-width: 600px) {
+	.wrap {
+		.max-width(1000px); 
+		margin: 0 auto 0;	
+	}
+	.top-menu{
+		ul {
+			.wrap;
+			li {
+				text-transform: uppercase;
+				padding: 15px;
+				font-weight: bold;			
+				a {
+					text-decoration: none;
+				}
+			}
+		}		
+	}
+}

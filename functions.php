@@ -112,4 +112,5 @@ CUSTOMIZE ADMIN
 HELP PAGE
 	-  my_help_menu
 ------------------------------------------------------------------*/
+//include_once ('inc/pages/functions.php');
 ?>

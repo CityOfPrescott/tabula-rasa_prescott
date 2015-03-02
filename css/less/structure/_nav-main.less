@@ -41,7 +41,7 @@
 					
 					&:hover,
 					&:focus {
-						background: @grey;
+						//background: @grey;
 					}
 					&:link {}
 				}
@@ -58,7 +58,7 @@
 					border: none;
 				}
 				&:hover > a {
-					font-weight: normal;
+					//font-weight: normal;
 				}				
 			}
 		}
@@ -70,7 +70,7 @@
 			top: auto;
 		}
 		&:hover > a {
-			background: @grey;
+			//background: @grey;
 			color: @link-color;
 		}
 	} /* end .nav-menu li */
@@ -81,6 +81,10 @@
 	li.current_page_ancestor {
 		& > a {
 			font-weight: bold;
+			//background: @sec-color;
+			border-radius: 5px 5px 0 0;
+			border: 1px solid @sec-color;
+			border-bottom: none;
 		}
 	}  
 	ul .current_page_parent,
@@ -93,29 +97,76 @@
 /** Breakpoint - 600 **/
 @media only screen and (min-width: 600px) {
 	.main-navigation {
-		.margin-top(20px);
-		display: inline-block;
-		width: 100%;
-		border-top: 2px solid @grey;
-		border-bottom: 2px solid @grey;	
+		//.margin-top(20px);
+		//display: inline-block;
+		//width: 100%;
+		//border-top: 2px solid @grey;
+		//border-bottom: 2px solid @grey;	
 		
 		.mmenu-toggle {
-			.height(44px);
+			//.height(44px);
 			display: inline;
 		}
 		.nav-menu {
-			display: inline-block;
-			float: left;
-			width: auto;
+			//display: inline-block;
+			display: block;
+			//float: left;
+			//width: auto;
+			width: 1000px;
+			margin: 0 auto;
+			position: relative;
 			
-			a {
-				color: @white;
+			& > li:hover {
+				background: @sec-color;
+			
+				& > .sub-menu {
+					width: 1200px;
+					box-shadow: 0 3px 3px @grey;
+					//border-top: 1px solid @grey;
+					left: 0;
+				}		
 			}			
+			a {}			
+			li {
+				position: static;
+				
+				&:hover {
+					//background: @grey;
+				}		
+				.sub-menu {
+						box-shadow: none;
+						border: none;
+						
+					li {
+						font-weight: bold;
+						width: 25%;
+						
+						ul {
+							position: static;
+							float: left;
+							display: block;
+							
+							li {
+								font-weight: normal;
+								float: none;
+								display: block;
+								
+								&:nth-child(n+3) {
+									display: none;
+								}							
+							}						
+						}
+						&:nth-child(4n+1) {
+							clear: both;
+						}								
+					}				
+				}
+			}
 		}
 		.search-not-mobile {
 			display: inline-block;
 			float: right;
 			.padding-top(5px);
 		}
-	}
+	}//.main-nav
 }

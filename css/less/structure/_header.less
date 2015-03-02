@@ -31,19 +31,26 @@ header#masthead .site-header
 		text-decoration: none;
 	}	
 }
-
+ 
 /** Breakpoint - 600 **/
 @media only screen and (min-width: 600px) {
+	.wrap {
+		.max-width(1000px); 
+		margin: 0 auto 0;	
+	}
 	.site-header {
-		.margin-top(20px);
-	}	
+		//.margin-top(20px);
+	}
 	.site-branding {
-		background: url(../images/buffy-banner.png) no-repeat;
-		.height(150px);
+		//.height(150px);
 		.padding(10px);
-		width: 100%;
-		color: @white;
-			
+		//width: 100%;
+		color: @black;
+		//border: 1px solid @black;
+		.wrap;
+		display: block;
+		float: none;
+		
 		.site-title {
 			text-align: left;
 		}
@@ -51,7 +58,7 @@ header#masthead .site-header
 			display: block;
 		}
 		a {
-			color: @white;
+			//color: @white;
 		}	
 	}
 }
