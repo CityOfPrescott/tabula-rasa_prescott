@@ -42,4 +42,45 @@ function submenu_get_children_ids( $id, $items ) {
     return $ids;
 }
 	
+// add page level body class
+add_filter( 'body_class','halfhalf_body_class' );
+function halfhalf_body_class( $classes ) {
+	$count = count(get_post_ancestors($post->ID));
+	if ( $count == 0 ) {
+			$classes[] = 'level1';
+	}
+	if ( $count == 1 ) {
+			$classes[] = 'level2';
+	}
+	if ( $count >= 2 ) {
+			$classes[] = 'level2plus';
+	}	
+	return $classes;     
+}
+
+//Breadcrumbs
+function the_breadcrumb() {
+	if (!is_home()) {
+		if (is_category() || is_single()) {
+			the_category('title_li=');
+			if (is_single()) {
+				echo "  ";
+				the_title();
+			}
+		} elseif (is_page()) {
+			//echo the_title();
+			$crumbs = get_post_ancestors($post->ID);
+//$input  = array("php", 4.0, array("green", "red"));
+$crumbs = array_reverse($crumbs);
+//$preserved = array_reverse($crumbs, true);
+
+//print_r($crumbs);
+//print_r($reversed);
+//print_r($preserved);
+			foreach ( $crumbs as $crumb ) {
+				echo '<a href="' . get_permalink($crumb) . '">' . get_the_title($crumb) . '</a> >>';
+			}
+		}
+	}
+}
 ?>

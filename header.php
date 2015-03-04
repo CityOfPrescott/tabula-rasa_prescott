@@ -37,16 +37,20 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="top-menu">
-			<?php //wp_nav_menu( array( 'theme_location' => 'top-nav') ); ?>
-			<ul id="menu-top-nav" class="menu">
-				<li class="menu-item"><a href="">Airport</a></li>
-				<li class="menu-item"><a href="">Golf Course</a></li>
-				<li class="menu-item"><a href="">Library</a></li>
-				<li class="menu-item"><a href="">Economic Development</a></li>
-				<li class="menu-item"><a href="">Tourism</a></li>
-				<li class="menu-item"><a href="">Departments</a></li>
-				<li class="menu-item"><a href="">Documents</a></li>
-			</ul>
+			<div class="top-menu-inner">
+				<?php //wp_nav_menu( array( 'theme_location' => 'top-nav') ); ?>
+				<ul id="menu-top-nav" class="external menu">
+					<li class="menu-item"><a href="">Airport</a></li>
+					<li class="menu-item"><a href="">Golf Course</a></li>
+					<li class="menu-item"><a href="">Library</a></li>
+					<li class="menu-item"><a href="">Economic Development</a></li>
+					<li class="menu-item"><a href="">Tourism</a></li>
+				</ul>
+				<ul class="internal">
+					<li class="menu-item"><a href="">Departments</a></li>
+					<li class="menu-item"><a href="">Documents</a></li>
+				</ul>
+			</div>
 		</div>
 		<div class="mobile-menu">
 				<i class="fa fa-bars"></i>

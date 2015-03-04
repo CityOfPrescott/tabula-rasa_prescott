@@ -5,6 +5,27 @@
  * @package tabula-rasa
  */
 ?>
+		<div class="page-info-wrapper">
+			<div class="page-info">
+				<header class="entry-header page-menu">
+					<h1 class="entry-title" title="">
+					<?php  echo get_the_title($post->post_parent); ?>
+					</h1>
+					<?php 
+						$args = array( 
+							'theme_location' => 'primary', 
+							'submenu' => get_the_title($post->post_parent),
+							'container_class' => 'mmenu-toggle', 
+							'menu_class' => 'nav-menu'
+							); 
+						wp_nav_menu( $args );			
+					?>					
+					<div class="breadcrumbs">
+						<?php the_breadcrumb(); ?>					
+					</div>
+				</header><!-- .entry-header -->
+			</div>
+		</div>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="article-header">
 		<?php the_title( sprintf( '<h2 class="article-title" title="%s">', esc_url( get_permalink() ) ), '</h2>' ); ?>
@@ -82,7 +103,7 @@ if ( $contact == '' ) {
 	
 	<section class="col-3">
 	
-		<div class="faq">
+		<div class="faq widgets">
 			<h3>FAQ</h3>
 			<ul>
 				<li><a href="http://www.google.com">City Government has collapsed</a></li>
@@ -91,7 +112,7 @@ if ( $contact == '' ) {
 			</ul>
 		</div>
 		
-		<div class="code">
+		<div class="code widgets">
 			<h3>Code</h3>
 			<ul>
 				<li><a href="http://www.google.com">City Government has collapsed</a></li>
@@ -100,7 +121,7 @@ if ( $contact == '' ) {
 			</ul>
 		</div>	
 		
-		<div class="events">
+		<div class="events widgets">
 			<h3>Recent News</h3>
 			<h4>Topping sweet roll tiramisu tart</h4>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/fire-truck.jpg" />
