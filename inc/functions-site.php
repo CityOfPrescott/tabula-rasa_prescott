@@ -45,22 +45,26 @@ function submenu_get_children_ids( $id, $items ) {
 // add page level body class
 add_filter( 'body_class','halfhalf_body_class' );
 function halfhalf_body_class( $classes ) {
-	$count = count(get_post_ancestors($post->ID));
-	if ( $count == 0 ) {
-			$classes[] = 'level1';
+	if (!is_home()) {
+		global $post;
+		$count = count(get_post_ancestors($post->ID));
+		if ( $count == 0 ) {
+				$classes[] = 'level1';
+		}
+		if ( $count == 1 ) {
+				$classes[] = 'level2';
+		}
+		if ( $count >= 2 ) {
+				$classes[] = 'level2plus';
+		}	
 	}
-	if ( $count == 1 ) {
-			$classes[] = 'level2';
-	}
-	if ( $count >= 2 ) {
-			$classes[] = 'level2plus';
-	}	
 	return $classes;     
 }
 
 //Breadcrumbs
 function the_breadcrumb() {
 	if (!is_home()) {
+		global $post;
 		if (is_category() || is_single()) {
 			the_category('title_li=');
 			if (is_single()) {
