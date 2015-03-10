@@ -58,26 +58,8 @@
 		</div>
 		
 		<div class="site-branding">	
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php 
-			$title = get_the_title();
-			//echo $title;
-			//bloginfo( 'description' ); ?></h2>
-		</div>
-		<div class="search-mobile">
-			<i class="fa fa-search"></i>
-			<a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'tabula-rasa' ); ?></a>		
-		</div>
-		<div class="QRprintonly">
-			<?php
-			$permalink = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-			// QR code url
-			$qr_code_url = 'http://chart.apis.google.com/chart?chs=100x100&cht=qr&chld=|0&chl='.urlencode($permalink);
-			?>
-			<p>Scan to visit this page:</p>
-			<img src="<?php echo $qr_code_url; ?>
-			" />
-		</div>	
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/images/city_logo.gif" /></a></h1>
+
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<!-- used to use tr_main_nav() from bones. switched back to _s. unneeded arguments -->
 			<?php 
@@ -101,24 +83,43 @@
 			wp_nav_menu( $args );			
 			?>
 			<!--
-			<ul id="menu-main-nav" class="nav-menu">
-				<li class="menu-item"><a href="">Government</a></li>
-				<li class="menu-item"><a href="">Business & Development</a></li>
-				<li class="menu-item"><a href="">Safety & Services</a></li>
-				<li class="menu-item"><a href="">How Do I</a></li>
-				<li class="menu-item"><a href="">News & Updates</a></li>
-				<li class="menu-item"><a href="">Recreation & Events</a></li>
-				<li class="menu-item"><a href="">Contact Us</a></li>
-			</ul>			
-			-->
-			<!--
 			<div class="search-not-mobile">
 			<i class="fa fa-search"></i>
 			<a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'tabula-rasa' ); ?></a>
 			</div>
 				-->
 			<?php //tr_social_menu(); ?>
+			<!--
+			<div class="services-module">
+			<h2>SERVICES</h2>
+			<ul>
+				<li>Application for Council</li>
+				<li>Dog Licence</li>
+				<li>Request a New Trash Can</li>
+			</ul>
+			</div>
+			-->
 		</nav><!-- #site-navigation -->
+		
+			<h2 class="site-description"><?php 
+			$title = get_the_title();
+			//echo $title;
+			//bloginfo( 'description' ); ?></h2>
+		</div>
+		<div class="search-mobile">
+			<i class="fa fa-search"></i>
+			<a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'tabula-rasa' ); ?></a>		
+		</div>
+		<div class="QRprintonly">
+			<?php
+			$permalink = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") . "://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+			// QR code url
+			$qr_code_url = 'http://chart.apis.google.com/chart?chs=100x100&cht=qr&chld=|0&chl='.urlencode($permalink);
+			?>
+			<p>Scan to visit this page:</p>
+			<img src="<?php echo $qr_code_url; ?>
+			" />
+		</div>	
 		<!--
 		<div id="search-container" class="search-box-wrapper">
 			<div class="search-box">

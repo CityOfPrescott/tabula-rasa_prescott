@@ -1,17 +1,71 @@
 /** Front Page
 -------------------------------------------------------------- */
-.home {
+.home { 
 	.content-area {
 		.column(12);
 	}
+	.photo-spread {
+			background: url(../images/photo-spread-1.jpg);
+			background-size: cover;
+			.height(300px);
+		//position: relative;
+	}
+
+		
+		.search-box {
+			.wrap;
+			position: relative;
+			top: 80%;
+			transform: translateY(-50%);
+			bottom: 20px;
+			background: none;
+			
+			.search-field {
+				opacity:0.6;
+				border: 4px solid #111;
+			}
+		}
+	.spotlight-wrapper {
+		clear: both;
+		background: @sec-color;
+		overflow: hidden;
+		
+	}	
 	.spotlight {
+		.wrap;
+		.padding-top(20px);
+		.padding-bottom(20px);
+		overflow: hidden;
+		
 		.button {
-			.column(2.4);
+			.column(3);
 			border: 1px solid @black;
 			.border-radius(5px);
 			.height(125px);
+			text-align: center;
+			font-weight: bold;
+			.padding-top(50px);
 		}
 	}
+	.modules {
+		clear: both;
+		.wrap;
+		.padding-top(20px);
+		
+		.button {
+			.column(4);
+			border: 1px solid @black;
+			.height(300px);
+			
+			h3 {
+				margin: 0;
+				background: @sec-color;
+				text-align: center;
+				text-transform: uppercase;
+				overflow: hidden;
+			}
+		}
+	}	
 }
 
 /** Blog Page

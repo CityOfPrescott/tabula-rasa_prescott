@@ -84,6 +84,7 @@ $crumbs = array_reverse($crumbs);
 			foreach ( $crumbs as $crumb ) {
 				echo '<a href="' . get_permalink($crumb) . '">' . get_the_title($crumb) . '</a> >>';
 			}
+			echo get_the_title();
 		}
 	}
 }

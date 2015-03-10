@@ -81,6 +81,7 @@
 	h1 {
 		margin: 0;
 		.padding(10px, 0);
+		padding-bottom: 0;
 		display: inline;
 		float: left;
 		//width: 33%;				
@@ -96,27 +97,36 @@
 		//text-align: center;				
 		
 		.mmenu-toggle {
-			display: none;
+			//display: none;
 			
 			.nav-menu {
-				width: 300px;
-				//margin: 0 auto 0;
+				clear: both;
+				//width: 300px;
+				margin: 0 auto 0;
 				//.margin-left(-100%);
-				position: absolute;
+				//position: absolute;
 				background: @white;
+				float: left;
 				
 				li {
 					//width: 20%;
 					//text-align: left;
 					display: block;
-					position: static;
-					float: none;
+					//position: static;
+					float: left;
 					
+					&.current-menu-item, 
+					.current_page_item, 
+					.current_page_ancestor {
+						 &>a {
+							border: none;
+						 }
+					}
 				}
 			}
 		}
 		&:hover > .mmenu-toggle {
-			display: block;
+			//display: block;
 		}
 	}
 	.search-not-mobile {

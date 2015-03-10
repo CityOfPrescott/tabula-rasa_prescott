@@ -11,6 +11,9 @@
 					<h1 class="entry-title" title="">
 					<?php  echo get_the_title($post->post_parent); ?>
 					</h1>
+					<div class="breadcrumbs">
+						<?php the_breadcrumb(); ?>					
+					</div>					
 					<?php 
 						$args = array( 
 							'theme_location' => 'primary', 
@@ -20,9 +23,6 @@
 							); 
 						wp_nav_menu( $args );			
 					?>					
-					<div class="breadcrumbs">
-						<?php the_breadcrumb(); ?>					
-					</div>
 				</header><!-- .entry-header -->
 			</div>
 		</div>
